@@ -1,0 +1,18 @@
+# Railway / Nixpacks build configuration for Evergreen Capital (plain PHP, PDO).
+# Railway auto-detects PHP, but pinning it here avoids surprise version changes
+# and guarantees the PDO drivers the app needs are present.
+
+providers = ["php"]
+
+[phases.setup]
+nixPkgs = ["php83", "php83Extensions.pdo", "php83Extensions.pdo_mysql", "php83Extensions.pdo_pgsql", "php83Extensions.mbstring", "php83Extensions.openssl", "php83Extensions.curl"]
+
+[phases.install]
+# No Composer dependencies in this project, so nothing to install.
+cmds = ["echo 'No composer dependencies to install.'"]
+
+[start]
+# Serve with PHP's built-in server bound to Railway's injected $PORT.
+# The app entry point (index.php) lives at the repository root, so the docroot
+# is '.'. router.php maps clean paths and lets index.php handle 404s.
+cmd = "php -S 0.0.0.0:${PORT:-8080} -t . router.php"
