@@ -38,6 +38,7 @@ $wave = '<svg class="wave" viewBox="0 0 24 24" fill="none" stroke="currentColor"
 
       <div class="v-stage reveal" style="--d:.12s" aria-hidden="true">
         <span class="v-ring r1"></span><span class="v-ring r2"></span>
+        <div class="v-photo"><img src="<?php echo base_url('assets/img/community.jpg'); ?>" alt="" width="1200" height="800" fetchpriority="high"></div>
 
         <div class="v-app">
           <div class="v-app-top">
@@ -63,17 +64,6 @@ $wave = '<svg class="wave" viewBox="0 0 24 24" fill="none" stroke="currentColor"
           <div class="v-tx"><i><?php echo icon('card'); ?></i><span><b><?php echo te('v.tx_grocer'); ?></b><small><?php echo te('demo.yesterday'); ?></small></span><em>−<?php echo money(86.40); ?></em></div>
         </div>
 
-        <div class="v-cardx">
-          <div class="row"><span class="nm"><?php echo brand_mark(22); ?> Evergreen</span><span class="tier">Platinum</span></div>
-          <div class="row"><span class="chip"></span><?php echo $wave; ?></div>
-          <span class="num">4716 •••• •••• 2048</span>
-          <div class="row">
-            <span><small>Card holder</small><b>AMARA LEWIS</b></span>
-            <span><small>Expires</small><b>09/30</b></span>
-            <span class="circles"><i></i><i></i></span>
-          </div>
-        </div>
-
         <div class="v-chip c1"><span class="ico"><?php echo icon('check'); ?></span><span><b><?php echo te('v.chip1_h'); ?></b><small>+<?php echo money(1240); ?> · TRF8A19C</small></span></div>
         <div class="v-chip c2"><span class="v-ringp" style="--p:72" data-v="72%"></span><span><b><?php echo te('v.chip2_h'); ?></b><small><?php echo te('v.chip2_s'); ?></small></span></div>
       </div>
@@ -97,7 +87,7 @@ $wave = '<svg class="wave" viewBox="0 0 24 24" fill="none" stroke="currentColor"
     </div>
 
     <div class="bento">
-      <article class="tall dark reveal">
+      <article class="tall dark photo reveal" style="--bg:url(<?php echo base_url('assets/img/tile-card.jpg'); ?>)">
         <div>
           <?php echo icon('send'); ?>
           <h3><?php echo te('feat.move_h'); ?></h3>
@@ -105,7 +95,7 @@ $wave = '<svg class="wave" viewBox="0 0 24 24" fill="none" stroke="currentColor"
         </div>
         <div><span class="big">3</span><p><?php echo te('feat.type_count'); ?></p></div>
       </article>
-      <article class="wide reveal" style="--d:.06s">
+      <article class="wide photo reveal" style="--d:.06s;--bg:url(<?php echo base_url('assets/img/lending.jpg'); ?>)">
         <?php echo icon('bank'); ?>
         <h3><?php echo te('feat.borrow_h'); ?></h3>
         <p><?php echo te('feat.borrow_p'); ?></p>
@@ -125,12 +115,12 @@ $wave = '<svg class="wave" viewBox="0 0 24 24" fill="none" stroke="currentColor"
         <h3><?php echo te('feat.benef_h'); ?></h3>
         <p><?php echo te('feat.benef_p'); ?></p>
       </article>
-      <article class="wide reveal" style="--d:.06s">
+      <article class="wide photo reveal" style="--d:.06s;--bg:url(<?php echo base_url('assets/img/careers-banner.jpg'); ?>)">
         <?php echo icon('check'); ?>
         <h3><?php echo te('feat.receipt_h'); ?></h3>
         <p><?php echo te('feat.receipt_p'); ?></p>
       </article>
-      <article class="wide reveal" style="--d:.1s">
+      <article class="wide photo reveal" style="--d:.1s;--bg:url(<?php echo base_url('assets/img/tile-people.jpg'); ?>)">
         <?php echo icon('mail'); ?>
         <h3><?php echo te('feat.notice_h'); ?></h3>
         <p><?php echo te('feat.notice_p'); ?></p>
@@ -224,6 +214,7 @@ $wave = '<svg class="wave" viewBox="0 0 24 24" fill="none" stroke="currentColor"
   <section class="sec" id="cards">
     <div class="split">
       <div class="v-cards reveal" aria-hidden="true">
+        <div class="v-bgphoto"><img src="<?php echo base_url('assets/img/payments-portrait.jpg'); ?>" alt="" width="800" height="1000" loading="lazy"></div>
         <div class="v-cardx k1">
           <div class="row"><span class="nm"><?php echo brand_mark(22); ?> Evergreen</span><span class="tier">Black</span></div>
           <div class="row"><span class="chip"></span><?php echo $wave; ?></div>
@@ -258,6 +249,10 @@ $wave = '<svg class="wave" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       <div class="numlabel"><b>04</b> <?php echo te('calc.label'); ?></div>
       <h2><?php echo te('calc.title'); ?></h2>
       <p><?php echo te('calc.sub'); ?></p>
+    </div>
+
+    <div class="photoband short reveal">
+      <img src="<?php echo base_url('assets/img/lending.jpg'); ?>" alt="" width="1200" height="800" loading="lazy">
     </div>
 
     <div class="calcwrap reveal" style="--d:.08s">
@@ -326,11 +321,11 @@ $wave = '<svg class="wave" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       <p><?php echo te('steps.sub'); ?></p>
     </div>
     <div class="steps">
-      <article class="reveal"><h3><?php echo te('steps.s1_h'); ?></h3>
+      <article class="reveal"><img class="stepimg" src="<?php echo base_url('assets/img/step-1.jpg'); ?>" alt="" width="600" height="400" loading="lazy"><h3><?php echo te('steps.s1_h'); ?></h3>
         <p><?php echo te('steps.s1_p'); ?></p></article>
-      <article class="reveal" style="--d:.08s"><h3><?php echo te('steps.s2_h'); ?></h3>
+      <article class="reveal" style="--d:.08s"><img class="stepimg" src="<?php echo base_url('assets/img/step-2.jpg'); ?>" alt="" width="600" height="400" loading="lazy"><h3><?php echo te('steps.s2_h'); ?></h3>
         <p><?php echo te('steps.s2_p'); ?></p></article>
-      <article class="reveal" style="--d:.16s"><h3><?php echo te('steps.s3_h'); ?></h3>
+      <article class="reveal" style="--d:.16s"><img class="stepimg" src="<?php echo base_url('assets/img/step-3.jpg'); ?>" alt="" width="600" height="400" loading="lazy"><h3><?php echo te('steps.s3_h'); ?></h3>
         <p><?php echo te('steps.s3_p'); ?></p></article>
     </div>
   </section>

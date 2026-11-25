@@ -132,7 +132,7 @@ function layout_head($title, $ctx = 'user')
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@1,9..144,500&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="<?php echo base_url('assets/css/app.css'); ?>?v=5">
+<link rel="stylesheet" href="<?php echo base_url('assets/css/app.css'); ?>?v=8">
 </head>
 <body class="ctx-<?php echo e($ctx); ?>">
 <?php if ($ctx === 'auth' || $ctx === 'plain') { ?>
