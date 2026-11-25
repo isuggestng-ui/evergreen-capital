@@ -1,0 +1,129 @@
+═══════════════════════════════════════════════════════════════════
+  BANK DOM  ·  Установка / Installation
+  evergreencapital.com — demonstration banking platform (green theme)
+═══════════════════════════════════════════════════════════════════
+
+NO install.php. You import one SQL file and edit one config file. Done.
+Two database options are included — pick ONE.
+
+
+───────────────────────────────────────────────────────────────────
+  OPTION A — MySQL on cPanel (simplest, recommended)
+───────────────────────────────────────────────────────────────────
+
+1. UPLOAD
+   • cPanel → File Manager → your domain folder (usually public_html).
+   • Upload everything in this package into that folder.
+   • If you uploaded the .zip, right-click → Extract, then delete the zip.
+
+2. CREATE THE DATABASE
+   • cPanel → "MySQL Databases".
+   • Create New Database  (e.g. bankdom)  → Create.
+   • Add New User + password  (write the password down).
+   • Add User To Database → select both → tick ALL PRIVILEGES → Make Changes.
+   • Note the three FULL names cPanel gives you:
+       database  (e.g. cpaneluser_bankdom)
+       user      (e.g. cpaneluser_dbuser)
+       password
+
+3. IMPORT THE TABLES
+   • cPanel → phpMyAdmin → click your database on the left.
+   • Import tab → Choose File → evergreen-mysql.sql → Go.
+   • 16 tables appear. Done.
+
+4. CONFIGURE
+   • File Manager → rename  config-sample.php  to  config.php  → Edit.
+   • In the MySQL block set DB_NAME, DB_USER, DB_PASS from step 2.
+   • Set APP_KEY to any long random string. Save.
+
+5. OPEN YOUR DOMAIN.  The public site loads in Russian.
+
+
+───────────────────────────────────────────────────────────────────
+  OPTION B — Neon (Postgres)
+───────────────────────────────────────────────────────────────────
+
+1. neon.tech → create a project → open the SQL Editor.
+2. Open evergreen-postgres.sql, copy ALL, paste into the SQL Editor, Run.
+3. In Neon → Connection Details → copy the POOLED string
+   (host contains "-pooler"). Note host, database, user, password.
+4. Rename config-sample.php → config.php. Comment out the MySQL block,
+   uncomment the Postgres block, fill in the four Neon values.
+5. Open your domain.
+
+
+───────────────────────────────────────────────────────────────────
+  FIRST LOGIN  (staff / administrator)
+───────────────────────────────────────────────────────────────────
+
+      URL:       yourdomain.com/admin/login.php
+      Email:     admin@evergreencapital.com
+      Password:  Evergreen#2026
+
+  ► CHANGE BOTH right after the first sign-in:
+      Password: Admin → Customers → open the admin user → set a new password.
+      Email:    Admin → Settings → Identity, and the admin account's email.
+
+  Customers register themselves at:  yourdomain.com/register.php
+
+
+───────────────────────────────────────────────────────────────────
+  LANGUAGE (RU / EN)
+───────────────────────────────────────────────────────────────────
+
+  • Russian is the default; visitors switch with the RU/EN toggle in the header.
+  • The choice is stored in a cookie and now persists correctly across pages,
+    including on Safari — a earlier build wrote the cookie too late for Safari
+    to keep it (the toggle looked "broken"); that's fixed at the root.
+  • Default language is a setting: Admin → Settings → default_lang (ru / en).
+  • Do one hard refresh (Ctrl/Cmd-Shift-R) after deploying, to clear any
+    stale cookie or cached stylesheet from a previous version.
+
+
+───────────────────────────────────────────────────────────────────
+  DESIGN IN THIS BUILD
+───────────────────────────────────────────────────────────────────
+
+  This is the GREEN / SERIF / BRASS theme — dark forest-green hero with
+  guilloché texture, brass accents, Instrument Serif headings, a bento
+  feature grid, product-showcase tabs, and a live loan calculator.
+  (A separate bright/white redesign was explored and then set aside in
+  favour of this look, per your call — nothing from that version ships here.)
+
+  Text "Д" wordmark throughout — no header logo image.
+  Fully bilingual: landing page, header/footer, sign-in, registration,
+  settings and currency (₽ RUB). Deeper content pages (about, business,
+  help, contact, careers, legal) and the dashboards work correctly but
+  their body text is still English — translate later if you'd like.
+
+
+───────────────────────────────────────────────────────────────────
+  AFTER INSTALL — checklist
+───────────────────────────────────────────────────────────────────
+
+  Admin → Settings → Identity:
+    • Company legal name, address, phone, support email — all ship BLANK.
+      Fill in your own real details; nothing fabricated is included.
+    • Russian bank fields: БИК, корр. счёт, ИНН (for transfers).
+    • Currency is RUB (₽). Number format is Russian: 1 234,56 ₽.
+
+  The demo marker:
+    • A quiet line in the footer + a note inside the admin area only.
+    • Controlled by the "show_demo_badge" setting. KEEP IT while this is a
+      demo — it tells visitors and Google the site is not a licensed bank,
+      which is what prevents "deceptive site" flags on a fresh bank-style .com.
+
+
+───────────────────────────────────────────────────────────────────
+  TROUBLESHOOTING
+───────────────────────────────────────────────────────────────────
+
+  "Setup required" page  → config.php missing or DB details wrong.
+  Blank white page       → check DB_NAME/USER/PASS match cPanel exactly;
+                           the DB user needs ALL PRIVILEGES.
+  Language won't switch   → hard refresh once (Ctrl/Cmd-Shift-R) to clear an
+                           old cookie or cached CSS.
+  Cyrillic looks wrong    → import the provided .sql (it sets utf8mb4);
+                           don't retype it.
+  Can't reach admin       → the URL is /admin/login.php (not /login.php).
+═══════════════════════════════════════════════════════════════════
