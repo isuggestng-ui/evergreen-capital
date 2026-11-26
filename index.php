@@ -78,10 +78,55 @@ $wave = '<svg class="wave" viewBox="0 0 24 24" fill="none" stroke="currentColor"
     <div><b><span class="count" data-count="190" data-dp="0" data-suffix="+">190+</span></b><small><?php echo te('v.stat4'); ?></small></div>
   </div>
 
+  <!-- ═══ gallery slider ═══ -->
+  <section class="sec" id="gallery">
+    <div class="sec-head reveal">
+      <div class="numlabel"><b>01</b> <?php echo te('gal.label'); ?></div>
+      <h2><?php echo te('gal.title'); ?></h2>
+      <p><?php echo te('gal.sub'); ?></p>
+    </div>
+
+    <div class="slider reveal" data-slider style="--d:.06s">
+      <div class="slider-track">
+        <div class="slide is-active" role="group" aria-roledescription="slide" aria-label="1 / 4">
+          <img src="<?php echo base_url('assets/img/tile-people.jpg'); ?>" alt="" loading="eager">
+          <div class="slide-cap">
+            <h3><?php echo te('gal.s1_h'); ?></h3>
+            <p><?php echo te('gal.s1_p'); ?></p>
+          </div>
+        </div>
+        <div class="slide" role="group" aria-roledescription="slide" aria-label="2 / 4">
+          <img src="<?php echo base_url('assets/img/lending.jpg'); ?>" alt="" loading="lazy">
+          <div class="slide-cap">
+            <h3><?php echo te('gal.s2_h'); ?></h3>
+            <p><?php echo te('gal.s2_p'); ?></p>
+          </div>
+        </div>
+        <div class="slide" role="group" aria-roledescription="slide" aria-label="3 / 4">
+          <img src="<?php echo base_url('assets/img/step-1.jpg'); ?>" alt="" loading="lazy">
+          <div class="slide-cap">
+            <h3><?php echo te('gal.s3_h'); ?></h3>
+            <p><?php echo te('gal.s3_p'); ?></p>
+          </div>
+        </div>
+        <div class="slide" role="group" aria-roledescription="slide" aria-label="4 / 4">
+          <img src="<?php echo base_url('assets/img/community.jpg'); ?>" alt="" loading="lazy">
+          <div class="slide-cap">
+            <h3><?php echo te('gal.s4_h'); ?></h3>
+            <p><?php echo te('gal.s4_p'); ?></p>
+          </div>
+        </div>
+      </div>
+      <button class="sarrow sprev" data-slide-prev aria-label="Previous">&#8592;</button>
+      <button class="sarrow snext" data-slide-next aria-label="Next">&#8594;</button>
+      <div class="sdots"><button class="sdot is-active" data-slide="0" aria-label="1"></button><button class="sdot" data-slide="1" aria-label="2"></button><button class="sdot" data-slide="2" aria-label="3"></button><button class="sdot" data-slide="3" aria-label="4"></button></div>
+    </div>
+  </section>
+
   <!-- ═══ features ═══ -->
   <section class="sec" id="accounts">
     <div class="sec-head center reveal">
-      <div class="numlabel"><b>01</b> <?php echo te('feat.tag'); ?></div>
+      <div class="numlabel"><b>02</b> <?php echo te('feat.tag'); ?></div>
       <h2><?php echo te('feat.title'); ?></h2>
       <p><?php echo te('feat.sub'); ?></p>
     </div>
@@ -131,7 +176,7 @@ $wave = '<svg class="wave" viewBox="0 0 24 24" fill="none" stroke="currentColor"
   <!-- ═══ showcase ═══ -->
   <section class="sec" id="product" style="padding-top:20px">
     <div class="sec-head reveal">
-      <div class="numlabel"><b>02</b> <?php echo te('show.label'); ?></div>
+      <div class="numlabel"><b>03</b> <?php echo te('show.label'); ?></div>
       <h2><?php echo te('show.title'); ?></h2>
       <p><?php echo te('show.sub'); ?></p>
     </div>
@@ -229,7 +274,7 @@ $wave = '<svg class="wave" viewBox="0 0 24 24" fill="none" stroke="currentColor"
         </div>
       </div>
       <div class="reveal" style="--d:.08s">
-        <div class="numlabel"><b>03</b> <?php echo te('v.cards_label'); ?></div>
+        <div class="numlabel"><b>04</b> <?php echo te('v.cards_label'); ?></div>
         <h2><?php echo te('split.card_h'); ?></h2>
         <p><?php echo te('split.card_p'); ?></p>
         <div class="v-perks">
@@ -246,7 +291,7 @@ $wave = '<svg class="wave" viewBox="0 0 24 24" fill="none" stroke="currentColor"
   <!-- ═══ calculator ═══ -->
   <section class="sec" id="lending">
     <div class="sec-head center reveal">
-      <div class="numlabel"><b>04</b> <?php echo te('calc.label'); ?></div>
+      <div class="numlabel"><b>05</b> <?php echo te('calc.label'); ?></div>
       <h2><?php echo te('calc.title'); ?></h2>
       <p><?php echo te('calc.sub'); ?></p>
     </div>
@@ -297,7 +342,7 @@ $wave = '<svg class="wave" viewBox="0 0 24 24" fill="none" stroke="currentColor"
   <!-- ═══ security ═══ -->
   <section class="sec">
     <div class="band reveal">
-      <div class="numlabel"><b>05</b> <?php echo te('sec.label'); ?></div>
+      <div class="numlabel"><b>06</b> <?php echo te('sec.label'); ?></div>
       <div style="max-width:58ch;margin-bottom:36px">
         <h2><?php echo te('sec.title'); ?></h2>
         <p><?php echo te('sec.body'); ?></p>
@@ -316,7 +361,7 @@ $wave = '<svg class="wave" viewBox="0 0 24 24" fill="none" stroke="currentColor"
   <!-- ═══ steps ═══ -->
   <section class="sec" id="transfers">
     <div class="sec-head center reveal">
-      <div class="numlabel"><b>06</b> <?php echo te('steps.label'); ?></div>
+      <div class="numlabel"><b>07</b> <?php echo te('steps.label'); ?></div>
       <h2><?php echo te('steps.title'); ?></h2>
       <p><?php echo te('steps.sub'); ?></p>
     </div>
@@ -337,7 +382,7 @@ $wave = '<svg class="wave" viewBox="0 0 24 24" fill="none" stroke="currentColor"
         <img src="<?php echo base_url('assets/img/community.jpg'); ?>" alt="" width="1200" height="800" loading="lazy">
       </div>
       <div class="reveal" style="--d:.08s">
-        <div class="numlabel"><b>07</b> <?php echo te('ppl.label'); ?></div>
+        <div class="numlabel"><b>08</b> <?php echo te('ppl.label'); ?></div>
         <h2><?php echo te('ppl.title'); ?></h2>
         <p><?php echo te('ppl.body'); ?></p>
         <ul class="ticks">
@@ -355,7 +400,7 @@ $wave = '<svg class="wave" viewBox="0 0 24 24" fill="none" stroke="currentColor"
   <section class="sec">
     <div class="v-faq">
       <div class="reveal">
-        <div class="numlabel"><b>08</b> <?php echo te('v.faq_label'); ?></div>
+        <div class="numlabel"><b>09</b> <?php echo te('v.faq_label'); ?></div>
         <div class="sec-head" style="margin-bottom:0">
           <h2><?php echo te('v.faq_title'); ?></h2>
           <p><?php echo te('v.faq_sub'); ?></p>

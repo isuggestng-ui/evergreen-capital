@@ -1401,3 +1401,28 @@ html:not(.dark) .authside li .ic{background:var(--mint);color:var(--ink-2)}
 html:not(.dark) .authside .wordmark .wm-text{color:#fff}
 html:not(.dark) .authside .wordmark .wm-text small{color:var(--mint)}
 .hero .v-chip.c2{bottom:-7%;right:-2%}
+
+/* ── gallery slider ── */
+.slider{position:relative;max-width:1180px;margin:0 auto;border-radius:28px;overflow:hidden;box-shadow:var(--shadow-lg)}
+.slider-track{display:flex;transition:transform .55s cubic-bezier(.65,0,.35,1)}
+.slide{position:relative;flex:0 0 100%;aspect-ratio:16/7;min-height:260px}
+.slide img{width:100%;height:100%;object-fit:cover;display:block}
+.slide::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,32,26,.86) 0%,rgba(5,32,26,.15) 55%,rgba(5,32,26,0) 100%)}
+.slide-cap{position:absolute;left:0;right:0;bottom:0;padding:34px 40px;color:#fff;z-index:1}
+.slide-cap h3{font-family:var(--serif);font-size:clamp(20px,2.4vw,30px);margin:0 0 6px;color:#fff}
+.slide-cap p{margin:0;color:#D9ECE4;max-width:520px;font-size:15px}
+.sarrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;
+  background:rgba(255,255,255,.14);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.3);color:#fff;
+  font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.sarrow:hover{background:rgba(255,255,255,.28)}
+.sprev{left:16px}.snext{right:16px}
+.sdots{position:absolute;right:20px;bottom:18px;display:flex;gap:7px;z-index:2}
+.sdot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.4);border:0;padding:0;cursor:pointer;transition:all .2s}
+.sdot.is-active{background:#fff;width:22px;border-radius:5px}
+html:not(.dark) .slide::after{background:linear-gradient(0deg,rgba(5,32,26,.78) 0%,rgba(5,32,26,.1) 55%,rgba(5,32,26,0) 100%)}
+@media (max-width:760px){
+  .slider{border-radius:20px}
+  .slide{aspect-ratio:4/5;min-height:360px}
+  .slide-cap{padding:22px 20px}
+  .sarrow{width:36px;height:36px;font-size:15px}
+}

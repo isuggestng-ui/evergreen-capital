@@ -133,6 +133,20 @@ try {
     // never block a page over a cosmetic migration
 }
 
+// ── One-time switch to German as the default language ───────────────────
+// Runs once; leaves the setting alone if an admin already changed it away
+// from the factory default.
+try {
+    if (setting('lang_rev') !== 'evergreen-de-1') {
+        if (in_array(setting('default_lang'), array('', 'en', 'ru'), true)) {
+            setting_set('default_lang', 'de');
+        }
+        setting_set('lang_rev', 'evergreen-de-1');
+    }
+} catch (Exception $e) {
+    // never block a page over a cosmetic migration
+}
+
 if (session_status() === PHP_SESSION_NONE) {
     session_set_cookie_params(0, '/', '', !empty($_SERVER['HTTPS']), true);
     session_name('evergreen_sess');
