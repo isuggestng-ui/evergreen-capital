@@ -133,15 +133,22 @@ try {
     // never block a page over a cosmetic migration
 }
 
-// ── One-time switch to German as the default language ───────────────────
-// Runs once; leaves the setting alone if an admin already changed it away
-// from the factory default.
+// ── One-time language default switches ───────────────────────────────────
+// Each runs once; a later step only undoes the one before it if it finds the
+// setting still at the value the previous step left it on, so an admin's own
+// manual choice is never overwritten.
 try {
     if (setting('lang_rev') !== 'evergreen-de-1') {
         if (in_array(setting('default_lang'), array('', 'en', 'ru'), true)) {
             setting_set('default_lang', 'de');
         }
         setting_set('lang_rev', 'evergreen-de-1');
+    }
+    if (setting('lang_rev') !== 'evergreen-en-1') {
+        if (setting('default_lang') === 'de') {
+            setting_set('default_lang', 'en');
+        }
+        setting_set('lang_rev', 'evergreen-en-1');
     }
 } catch (Exception $e) {
     // never block a page over a cosmetic migration

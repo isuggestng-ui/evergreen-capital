@@ -29,7 +29,7 @@ function bankdom_auto_install_and_seed(PDO $pdo)
         'inn' => '',
         'footer_note' => '',
         'admin_notice' => 'Demonstration platform — not a real bank. No real deposits are held.',
-        'default_lang' => 'de',
+        'default_lang' => 'en',
         'show_demo_badge' => '1',
         'legal_notice' => '',
         'mail_method' => 'php',

@@ -25,8 +25,8 @@ function current_lang()
     if (isset($_GET['lang']) && isset($avail[$_GET['lang']])) return $lang = $_GET['lang'];
     if (isset($_COOKIE['lang']) && isset($avail[$_COOKIE['lang']])) return $lang = $_COOKIE['lang'];
 
-    $default = function_exists('setting') ? setting('default_lang', 'de') : 'de';
-    return $lang = isset($avail[$default]) ? $default : 'de';
+    $default = function_exists('setting') ? setting('default_lang', 'en') : 'en';
+    return $lang = isset($avail[$default]) ? $default : 'en';
 }
 
 /**

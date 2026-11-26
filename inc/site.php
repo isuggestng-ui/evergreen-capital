@@ -51,6 +51,7 @@ function site_head($title, $description = '', $current = '')
     <?php echo theme_toggle('mob-theme'); ?>
     <label for="sitenav" class="sitenav-burger" aria-label="Menu"><span></span><span></span><span></span></label>
     <nav class="sitelinks">
+      <div class="mob-langswitch"><?php echo lang_switcher(); ?></div>
       <?php
       $links = array(
           'index.php'    => t('nav.personal'),
