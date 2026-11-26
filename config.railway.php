@@ -106,4 +106,8 @@ define('DB_SQLITE_PATH', $__env(array('SQLITE_PATH'), __DIR__ . '/storage/bankdo
 /* ---- App settings ---- */
 define('APP_KEY', $__env(array('APP_KEY'), 'railway-' . md5($__env(array('RAILWAY_PROJECT_ID'), 'bankdom-default-key'))));
 define('APP_DEBUG', in_array(strtolower($__env(array('APP_DEBUG'), '0')), array('1', 'true', 'on'), true));
-define('APP_URL', $__env(array('APP_URL', 'RAILWAY_PUBLIC_DOMAIN'), ''));
+$__appurl = trim($__env(array('APP_URL', 'RAILWAY_PUBLIC_DOMAIN'), ''));
+if ($__appurl !== '' && !preg_match('#^https?://#i', $__appurl)) {
+    $__appurl = 'https://' . $__appurl;   // RAILWAY_PUBLIC_DOMAIN has no scheme
+}
+define('APP_URL', rtrim($__appurl, '/'));
